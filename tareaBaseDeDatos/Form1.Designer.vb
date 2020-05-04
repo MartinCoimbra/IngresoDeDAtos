@@ -31,6 +31,8 @@ Partial Class Form1
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.grdTabla = New System.Windows.Forms.DataGridView()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         CType(Me.grdTabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -107,14 +109,34 @@ Partial Class Form1
         Me.grdTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grdTabla.Location = New System.Drawing.Point(260, 24)
         Me.grdTabla.Name = "grdTabla"
-        Me.grdTabla.Size = New System.Drawing.Size(443, 213)
+        Me.grdTabla.Size = New System.Drawing.Size(447, 213)
         Me.grdTabla.TabIndex = 8
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(40, 253)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.TabIndex = 9
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(159, 253)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar.TabIndex = 10
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(719, 308)
+        Me.ClientSize = New System.Drawing.Size(744, 308)
+        Me.Controls.Add(Me.btnActualizar)
+        Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.grdTabla)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnAgregar)
@@ -141,4 +163,6 @@ Partial Class Form1
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents grdTabla As DataGridView
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnActualizar As Button
 End Class

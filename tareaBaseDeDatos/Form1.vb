@@ -52,4 +52,31 @@ Public Class Form1
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         End
     End Sub
+
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Dim adaptador As MySqlDataAdapter = New MySqlDataAdapter
+        Dim cmd As New MySqlCommand
+        Dim ds As DataSet = New DataSet
+        Dim conexion As MySqlConnection
+        conexion = New MySqlConnection
+        conexion.ConnectionString = "server=localhost; database=encuesta;Uid=root;Pwd=;"
+
+        Try
+
+            conexion.Open()
+            cmd.Connection = conexion
+            cmd.CommandText = "SELECT * FROM encuesta_series ORDER BY id ASC"
+            adaptador.SelectCommand = cmd
+            adaptador.Fill(ds, "Tabla")
+            grdTabla.DataSource = ds
+            grdTabla.DataMember = "Tabla"
+            conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("No ha conectado con la base de datos.")
+
+        End Try
+
+    End Sub
+
 End Class
